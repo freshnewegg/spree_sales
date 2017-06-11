@@ -14,8 +14,9 @@ module Spree
       # Create a new sale price
       def create
         @sale_price = Spree::SalePrice.new sale_price_params
-
+        puts(@sale_price.inspect)
         if @sale_price.valid?
+          puts("VALID");
           @product.put_on_sale sale_price_params[:value], sale_price_params
           redirect_to admin_product_sale_prices_path(@product)
         else
@@ -58,6 +59,8 @@ module Spree
             :end_at,
             :currency,
             :variant,
+            :competitor_url,
+            :competitor_price,
             :calculator
           )
         end

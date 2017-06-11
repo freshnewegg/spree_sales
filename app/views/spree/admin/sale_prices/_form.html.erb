@@ -38,6 +38,16 @@
           <%= f.text_field :end_at, class: "datepicker form-control" %>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-4 form-group">
+          <%= f.label :competitor_url, raw(Spree.t(:Competitor_Link)) %>
+          <%= f.text_field :competitor_url, class: "form-control"%>
+        </div>
+        <div class="col-md-4 form-group">
+          <%= f.label :competitor_price, raw(Spree.t(:Competitor_Price)) %>
+          <%= f.text_field :competitor_price, class: "form-control"%>
+        </div>
+      </div>
       <div class="form-actions text-center" data-hook="buttons">
         <%= f.submit Spree.t("add_product_sale_prices"), class: 'btn btn-primary' %>
       </div>

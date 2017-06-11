@@ -14,6 +14,8 @@ Spree::Price.class_eval do
     sale_price.start_at   = params[:start_at] || Time.now
     sale_price.end_at     = params[:end_at]   || nil
     sale_price.enabled    = params[:enabled]  || true
+    sale_price.competitor_url = params[:competitor_url] || nil
+    sale_price.competitor_price = params[:competitor_price] || nil
 
     sale_price
   end
